@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Space</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        body { background: linear-gradient(135deg, #1e1e2f, #0f0f1a); color: #fff; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .profile-container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; width: 90%; max-width: 450px; text-align: center; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); }
+        .avatar { width: 130px; height: 130px; border-radius: 50%; border: 4px solid #ff4b91; object-fit: cover; margin-bottom: 20px; }
+        h1 { font-size: 2rem; margin-bottom: 10px; background: linear-gradient(45deg, #ff4b91, #ff7676); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { font-size: 1.1rem; color: #b3b3cc; margin-bottom: 25px; }
+        .bio { font-size: 0.95rem; line-height: 1.6; color: #d1d1e9; margin-bottom: 30px; }
+        .social-links { display: flex; flex-direction: column; gap: 15px; }
+        .social-btn { display: block; padding: 12px; text-decoration: none; color: #fff; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50px; font-weight: 600; transition: all 0.3s ease; }
+        .social-btn:hover { background: #ff4b91; border-color: #ff4b91; transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="avatar">
+        <h1>Welcome to My Space</h1>
+        <div class="subtitle">Welcome to my page!</div>
+        <p class="bio">Hello! I am glad you stumbled upon my little corner of the internet.</p>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank" class="social-btn">GitHub Portfolio</a>
+            <a href="mailto:your-email@example.com" class="social-btn">Get In Touch</a>
+        </div>
+    </div>
+</body>
+</html>
