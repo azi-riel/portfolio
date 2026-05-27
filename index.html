@@ -3,267 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio Space</title>
+    <title>Sofia Azriel - Portfolio</title>
     <style>
-        /* --- Coquette Aesthetic Design System --- */
+        /* --- Graphic Art Design System --- */
         :root {
-            --pink-bg: #fff0f5;
-            --pink-accent: #ffb6c1;
-            --pink-dark: #ff69b4;
-            --purple-bg: #e6e6fa;
-            --purple-accent: #d8bfd8;
-            --text-color: #4a4a4a;
+            --bg-color: #f6efe1; /* The off-white paper color */
+            --pink-base: #f7b4c6;
+            --pink-mid: #f089a5;
+            --red-accent: #cc2a4a;
+            --dark-pink: #cc3a60; /* For text */
+            --charcoal: #333333;
+            --glass: rgba(255, 255, 255, 0.3);
+            --card-bg: #ffffff;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+            font-weight: 500;
         }
 
         body {
-            background-color: var(--pink-bg);
-            color: var(--text-color);
+            background-color: var(--bg-color);
+            color: var(--dark-pink);
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(ellipse at center, transparent 0%, transparent 80%, rgba(247, 180, 198, 0.1) 100%),
+                linear-gradient(180deg, rgba(247, 180, 198, 0.15) 0%, transparent 100%);
         }
 
-        /* --- Navigation Header --- */
-        header {
-            background: #fff;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--text-color);
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            margin: 0 15px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--pink-dark);
-        }
-
-        /* --- Hero Banner --- */
-        .hero {
-            background: linear-gradient(to bottom, #ffe4e1, var(--pink-bg));
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            color: var(--pink-dark);
-            margin-bottom: 10px;
-            font-family: 'Georgia', serif;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            font-style: italic;
-            margin-bottom: 25px;
-            color: #666;
-        }
-
-        /* --- Scalloped Wave Border --- */
-        .divider {
-            height: 20px;
-            background-image: radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
-            background-size: 20px 20px;
-        }
-
-        /* --- Section Structures --- */
-        .section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            color: var(--text-color);
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '🌸';
+        /* --- Top Precise Bar Navigation --- */
+        .top-bar {
+            width: 100%;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
             position: absolute;
-            right: -35px;
             top: 0;
+            left: 0;
+            z-index: 100;
         }
 
-        .container {
+        .top-bar span {
+            color: var(--pink-mid);
+        }
+
+        /* --- Hero Title Section --- */
+        .hero {
+            height: 95vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .year {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--pink-mid);
+        }
+
+        .main-title {
+            font-size: 12rem; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -5px;
+            background: linear-gradient(135deg, var(--pink-mid), var(--red-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .sparkle {
+            position: absolute;
+            top: -30px;
+            right: 0px;
+            font-size: 4rem;
+            color: var(--red-accent);
+        }
+
+        /* --- Minimal Scroll Indicator --- */
+        .scroll-indicator {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--pink-mid);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background-color: var(--pink-mid);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- Standard Section Styling --- */
+        .section {
+            padding: 100px 60px;
+            text-align: center;
+        }
+
+        .section-header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+            color: var(--pink-mid);
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .section-header::before,
+        .section-header::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--pink-mid);
+            margin: 0 20px;
+        }
+
+        /* --- Circular Profile Image Blending Frame --- */
+        .profile-frame {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 40px auto;
+            border-radius: 50%; /* Makes the frame perfectly circular */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(247, 180, 198, 0.2);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover; /* Keeps aspect ratio clean inside the circle */
+        }
+
+        /* Circular pink gradient overlay underneath the photo to blend smoothly */
+        .profile-frame::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%; /* Covers the bottom half of the circle */
+            background: linear-gradient(to bottom, rgba(246, 239, 225, 0) 0%, rgba(247, 180, 198, 0.85) 100%);
+            pointer-events: none;
+        }
+
+        .about-content {
             max-width: 900px;
             margin: 0 auto;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        /* --- About Section Cards --- */
-        .about-box {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        /* --- System & Education Grid --- */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .portfolio-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            text-align: left;
-            border-top: 4px solid var(--pink-accent);
-        }
-
-        .portfolio-card h3 {
-            color: var(--pink-dark);
-            margin-bottom: 10px;
+            color: #3d3d3d;
+            line-height: 1.9;
             font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.2px;
         }
 
-        /* --- Contacts Section (Purple Area) --- */
-        .purple-section {
-            background-color: var(--purple-bg);
+        /* --- Structured Container Journey Layouts --- */
+        .journey-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
         }
 
-        .contact-flex {
+        .journey-main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-pink);
+            margin-bottom: 40px;
+        }
+
+        .journey-subtitle {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #4a3350;
+            margin: 40px 0 20px 0;
+        }
+
+        .journey-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(247, 180, 198, 0.4);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(247, 180, 198, 0.1);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .card-date {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--pink-mid);
+            background: #fff0f3;
+            padding: 4px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(247, 180, 198, 0.2);
+        }
+
+        .card-institution {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #777777;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .card-subheading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-pink);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: #555555;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .card-list li::before {
+            content: "✦";
+            color: var(--pink-mid);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .project-header-box {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .project-number {
+            background: #fff0f3;
+            color: var(--dark-pink);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 6px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(247, 180, 198, 0.4);
+        }
+
+        .project-description {
+            color: #555555;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .meta-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .meta-box {
+            background: #fdfbf7;
+            border: 1px solid rgba(247, 180, 198, 0.2);
+            border-radius: 12px;
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #888888;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4a3350;
+        }
+
+        /* --- Purple Category Circles --- */
+        .bubble-flex {
             display: flex;
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
-        .contact-bubble {
-            background: white;
-            color: var(--text-color);
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .contact-bubble:hover {
-            transform: translateY(-4px);
-            border-color: var(--purple-accent);
-            background-color: #fafafa;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: var(--pink-dark);
+        .category-bubble {
+            background: #d8bfd8;
             color: white;
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 0.9rem;
+            width: 160px;
+            height: 160px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .category-bubble:hover {
+            transform: translateY(-5px) rotate(5deg);
+        }
+
+        /* --- Bottom Precise Bar Footer --- */
+        .bottom-bar {
+            width: 100%;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            color: var(--pink-mid);
+            margin-top: 60px;
+            border-top: 1px solid rgba(240, 137, 165, 0.15);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">My Portfolio</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#system-education">System & Education</a>
-            <a href="#contacts">Contacts</a>
-        </nav>
-    </header>
+    <div class="top-bar">
+        <span>/Student/</span>
+        <span>/IT Student/</span>
+        <span>/Sofia Azriel B. Alameda/</span>
+    </div>
 
-    <main>
-        <section class="hero">
-            <h1 class="hero-title">Welcome to My Space</h1>
-            <p class="hero-subtitle">Exploring ideas, building systems, and creating daily.</p>
-        </section>
+    <main class="hero">
+        <div class="year">/DNSC/</div>
+        <h1 class="main-title">
+            Portfolio
+            <span class="sparkle">✦</span>
+        </h1>
 
-        <div class="divider"></div>
-
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <div class="container">
-                <div class="about-box">
-                    <p>Hello! Welcome to my personal hub. I am passionate about crafting digital experiences, analyzing complex problems, and diving into tech initiatives. This space serves as a live presentation of my creative projects, educational timeline, and technical system builds.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="system-education" class="section" style="background-color: #fff;">
-            <h2 class="section-title">System & Education</h2>
-            <div class="container">
-                <div class="portfolio-grid">
-                    
-                    <div class="portfolio-card">
-                        <h3>Academic Timeline</h3>
-                        <p><strong>Field of Study:</strong> Focused on information systems, computing structure, and database engineering principles.</p>
-                        <p style="margin-top: 10px; font-size: 0.9rem; color: #777;">Tracking active educational pathways and core group collaborations.</p>
-                    </div>
-
-                    <div class="portfolio-card">
-                        <h3>Core Systems & Logic</h3>
-                        <p><strong>Development Focus:</strong> Designing algorithms, system models, structured application architecture, and robust query flows.</p>
-                        <p style="margin-top: 10px; font-size: 0.9rem; color: #777;">Building frameworks that focus on quality logic and interactive features.</p>
-                    </div>
-
-                    <div class="portfolio-card">
-                        <h3>Environment Setup</h3>
-                        <p><strong>Local Setup & Deployment:</strong> Configured environments, continuous integration for web hosting platforms, and hardware adjustments.</p>
-                        <p style="margin-top: 10px; font-size: 0.9rem; color: #777;">Optimizing local network nodes and visual rendering pipelines.</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contacts" class="section purple-section">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="container">
-                <p>Feel free to reach out for collaborations, academic projects, or just to say hi!</p>
-                <div class="contact-flex">
-                    <a href="mailto:your-email@example.com" class="contact-bubble">💌 Email Me</a>
-                    <a href="https://github.com" target="_blank" class="contact-bubble">💻 GitHub Profile</a>
-                    <a href="#" class="contact-bubble">✨ Other Links</a>
-                </div>
-            </div>
-        </section>
+        <a href="#about" class="scroll-indicator">
+            <span>SCROLL DOWN</span>
+            <div class="scroll-line"></div>
+        </a>
     </main>
 
-    <footer>
-        <p>© 2026 Personal Space Portfolio. Handcrafted with love & sparkles 🌸</p>
-    </footer>
+    <section id="about" class="section">
+        <div class="section-header">About Me</div>
+        
+        <div class="profile-frame">
+            <img src="sofia_img.png" alt="Sofia Azriel" class="profile-photo">
+        </div>
+
+        <div class="about-content">
+            <p>
+                Good day! My name is Sofia Azriel B. Alameda.<br><br>
+                I am a second-year Information Technology student studying at Davao del Norte State College. Currently, I am exploring the junction between technology and creative design. I am passionate about learning how digital solutions can be combined with creativity to create meaningful and engaging experiences.<br><br>
+                As an IT student, I continue to develop my skills in programming, networking, multimedia design, and problem-solving. I enjoy working on projects that allow me to express both technical knowledge and artistic creativity. I am also eager to learn new technologies, improve my abilities, and gain experiences that will help me grow both personally and professionally.<br><br>
+                I value creativity, adaptability, and continuous learning, and I aim to use my skills to contribute to innovative and impactful projects in the future.
+            </p>
+        </div>
+    </section>
+
+    <section id="system-education" class="section">
+        <div class="section-header">/ System & Education /</div>
+        
+        <div class="journey-container">
+            <h2 class="journey-main-title">My Journey</h2>
+
+            <h3 class="journey-subtitle">Academic Background</h3>
+            <div class="journey-card">
+                <div class="card-top">
+                    <div class="card-title">Bachelor of Science in Information Technology</div>
+                    <div class="card-date">2024 – Present</div>
+                </div>
+                <div class="card-institution">Davao del Norte State College</div>
+                
+                <div class="card-subheading">Core Areas of Focus</div>
+                <ul class="card-list">
+                    <li>Programming Fundamentals & Logic Engineering</li>
+                    <li>Multimedia Systems & Interactive Design</li>
+                    <li>Network Implementations & System Administration</li>
+                </ul>
+            </div>
+
+            <h3 class="journey-subtitle">Systems & Architecture</h3>
+            
+            <div class="journey-card">
+                <div class="project-header-box">
+                    <span class="project-number">01</span>
+                    <div class="card-title">Train Ticketing System</div>
+                </div>
+                <p class="project-description">
+                    A desktop application designed to handle transport ticketing logs, automated fare inquiries, and transaction tracking. Implements localized interface design features to streamline ticketing desk operations.
+                </p>
+                <div class="meta-row">
+                    <div class="meta-box"><div class="meta-label">Environment</div><div class="meta-value">NetBeans IDE</div></div>
+                    <div class="meta-box"><div class="meta-label">Language</div><div class="meta-value">Java OOP</div></div>
+                    <div class="meta-box"><div class="meta-label">Database Layer</div><div class="meta-value">SQL / MySQL</div></div>
+                    <div class="meta-box"><div class="meta-label">Application</div><div class="meta-value">Desktop Client</div></div>
+                </div>
+            </div>
+
+            <div class="journey-card">
+                <div class="project-header-box">
+                    <span class="project-number">02</span>
+                    <div class="card-title">RE:Green System</div>
+                </div>
+                <p class="project-description">
+                    A web architecture blueprint focusing on eco-sustainability, tracking environmental metric data points, and coordinating localized green resources via a unified data model.
+                </p>
+                <div class="meta-row">
+                    <div class="meta-box"><div class="meta-label">Front-end</div><div class="meta-value">HTML / Layouts</div></div>
+                    <div class="meta-box"><div class="meta-label">Back-end</div><div class="meta-value">PHP Server</div></div>
+                    <div class="meta-box"><div class="meta-label">Storage Core</div><div class="meta-value">Relational DB</div></div>
+                    <div class="meta-box"><div class="meta-label">Platform</div><div class="meta-value">Web Application</div></div>
+                </div>
+            </div>
+
+            <div class="journey-card">
+                <div class="project-header-box">
+                    <span class="project-number">03</span>
+                    <div class="card-title">SkillBridge System</div>
+                </div>
+                <p class="project-description">
+                    An interactive directory layout connecting learning spaces and mapping student skill milestones. Leverages reliable schema relational tracking tools to bridge mentoring opportunities smoothly.
+                </p>
+                <div class="meta-row">
+                    <div class="meta-box"><div class="meta-label">Front-end</div><div class="meta-value">HTML / CSS / JS</div></div>
+                    <div class="meta-box"><div class="meta-label">Core Engine</div><div class="meta-value">PHP Logic</div></div>
+                    <div class="meta-box"><div class="meta-label">Persistence</div><div class="meta-value">Database Schema</div></div>
+                    <div class="meta-box"><div class="meta-label">Target Architecture</div><div class="meta-value">Responsive Web</div></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacts" class="section">
+        <div class="section-header">/ Get In Touch /</div>
+        <div class="section-content bubble-flex">
+            <a href="mailto:sofiaazrielalameda@gmail.com" class="category-bubble" style="background-color: #ffb6c1;">Email Me</a>
+            <a href="https://github.com/azi-riel" target="_blank" class="category-bubble" style="background-color: #fbc7a7;">GitHub</a>
+            <a href="https://www.facebook.com/sofiaazriel" target="_blank" class="category-bubble" style="background-color: #ff9aa2;">Facebook</a>
+            <a href="https://discord.com/523784759084580866" target="_blank" class="category-bubble" style="background-color: #fbc7a7;">Discord</a>
+        </div>
+    </section>
+
+    <div class="bottom-bar">
+        <span>sofiaazrielalameda@gmail.com</span>
+        <span>www.github.com/azi-riel</span>
+    </div>
 
 </body>
 </html>
